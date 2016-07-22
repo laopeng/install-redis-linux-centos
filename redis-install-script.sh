@@ -47,7 +47,7 @@ echo "rename-command FLUSHDB """ >> /etc/redis/redis.conf
 echo "*****************************************"
 echo " 5. Download init Script"
 echo "*****************************************"
-wget https://raw.github.com/saxenap/install-redis-amazon-linux-centos/master/redis-server --no-check-certificate
+wget https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-server --no-check-certificate
 echo "*****************************************"
 echo " 6. Move and Configure Redis-Server"
 echo "*****************************************"
