@@ -19,7 +19,18 @@ echo " 2. Download, Untar and Make Redis stable"
 echo "*****************************************"
 [ ! -d /root/tarbag ] && mkdir /root/tarbag
 cd /root/tarbag 
-wget http://download.redis.io/releases/redis-stable.tar.gz
+# Download redis-stable.tar.gz
+function REDIS_DOWNLOAD() {
+curl -I http://download.redis.io 2>/dev/null|grep 200
+R=$?
+if [ $R == 0 ]; then
+    wget http://download.redis.io/releases/redis-stable.tar.gz
+else
+    echo "Please download redis-stable.tar.gz from http://download.redis.io/releases/ and put it into dir /root/tarbag"
+    exit 0 
+fi
+}
+[ ! -f "redis-stable.tar.gz" ] && REDIS_DOWNLOAD
 tar xzf redis-stable.tar.gz
 cd redis-stable
 make 
@@ -47,7 +58,18 @@ echo "rename-command FLUSHDB """ >> /etc/redis/redis.conf
 echo "*****************************************"
 echo " 5. Download init Script"
 echo "*****************************************"
-wget https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-server --no-check-certificate
+# Download redis-server
+function INITD_REDIS() {
+curl -I https://raw.githubusercontent.com 2>/dev/null|grep 200
+R=$?
+if [ $R == 0 ]; then
+    wget https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-server --no-check-certificate
+else
+    echo "Please download redis-server from https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-server and put it into dir /root/tarbag"
+    exit 0
+fi
+}
+[ ! -f "redis-server" ] && REDIS_DOWNLOAD
 echo "*****************************************"
 echo " 6. Move and Configure Redis-Server"
 echo "*****************************************"
