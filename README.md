@@ -1,4 +1,4 @@
-For Redis stable Installation as a Service on Amazon Linux and CentOS:
+For Redis stable Installation as a Service on CentOS:
 Note: Please make sure you have superuser privileges
 
 1. wget https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-install-script.sh --no-check-certificate
