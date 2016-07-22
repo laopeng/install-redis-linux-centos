@@ -4,7 +4,7 @@
 # Uses redis-server init script from https://raw.github.com/saxenap/install-redis-amazon-linux-centos/master/redis-server
 ###############################################
 # To use: 
-# wget https://raw.github.com/saxenap/install-redis-amazon-linux-centos/master/redis-install-script.sh
+# wget https://raw.githubusercontent.com/laopeng/install-redis-linux-centos/master/redis-install-script.sh --no-check-certificate
 # chmod 777 redis-install-script.sh
 # ./redis-install-script.sh
 ###############################################
