@@ -17,8 +17,8 @@ yum -y install gcc gcc-c++ make
 echo "*****************************************"
 echo " 2. Download, Untar and Make Redis stable"
 echo "*****************************************"
-[ ! -d /root/soft ] && mkdir /root/soft
-cd /root/soft 
+[ ! -d /root/tarbag ] && mkdir /root/tarbag
+cd /root/tarbag 
 wget http://download.redis.io/releases/redis-stable.tar.gz
 tar xzf redis-stable.tar.gz
 cd redis-stable
